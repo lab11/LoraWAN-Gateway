@@ -26,12 +26,18 @@ Now we can continue with the LoRa gateway: download the sources and compile them
     cd ~/LoraWAN-Gateway/packet_forwarder
     make clean all
     cp ~/LoraWAN-Gateway/packet_forwarder/basic_pkt_fwd/basic_pkt_fwd ~/LoraWAN-Gateway/exec/
-    cp ~/LoraWAN-Gateway/packet_forwarder/basic_pkt_fwd/*.json ~/LoraWAN-Gateway/exec/
-    cd ~/LoraWAN-Gateway/exec
 
+The basic_pkt_fwd needs to be configured. Copy either the US or EU version and rename it 'global_conf.json':
+
+    cp ~/LoraWAN-Gateway/packet_forwarder/basic_pkt_fwd/global_conf.json.US ~/LoraWAN-Gateway/exec/global_conf.json
+    
+	OR
+
+    cp ~/LoraWAN-Gateway/packet_forwarder/basic_pkt_fwd/global_conf.json.EU ~/LoraWAN-Gateway/exec/global_conf.json
 
 Finally we can execute the LoRa gateway:
 
+    cd ~/LoraWAN-Gateway/exec
     ./basic_pkt_fwd
 
 
