@@ -1,0 +1,6 @@
+[submodule "packet_forwarder"]
+	path = packet_forwarder
+	url = https://github.com/amitshah326/packet_forwarder.git
+[submodule "lora_gateway"]
+	path = lora_gateway
+	url = https://github.com/amitshah326/lora_gateway.git
