@@ -1,22 +1,9 @@
 # LoraWAN-Gateway
 LoraWAN gateway software
 
-First of all we need the FTDI driver (libmpsse.so). Don't try to find it in internet because it is platform dependent. It is better to compile it from sources. Once finished libmpsse.so should be compiled and copied to /usr/lib:
+First of all we need the FTDI driver (libmpsse.so). Don't try to find it in internet because it is platform dependent. It is better to compile it from sources. Once finished libmpsse.so should be compiled and copied to /usr/lib. To install FTDI:
 
-    sudo apt-get install libftdi-dev --assume-yes
-    cd ~
-    wget http://libmpsse.googlecode.com/files/libmpsse-1.3.tar.gz
-    tar zxvf libmpsse-1.3.tar.gz
-    cd libmpsse-1.3/src
-    ./configure --prefix=/usr --disable-python
-    make
-    sudo make install
-    cd /etc/udev/rules.d
-    sudo wget https://raw.githubusercontent.com/mirakonta/lora_gateway/master/libloragw/99-libftdi.rules
-    sudo udevadm control --reload-rules
-    sudo udevadm trigger
-    sudo adduser pi plugdev
-
+    ./ftdiinstall.sh
 
 Now we can continue with the LoRa gateway: download the sources and compile them. Once finished basic_pkt_fwd should be compiled and copied in ~/LoraWAN-Gateway/exec:
 
