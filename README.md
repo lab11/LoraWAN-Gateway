@@ -1,6 +1,7 @@
 # LoraWAN-Gateway
-LoraWAN gateway software
+This repository contains code to make a LoraWan gateway. This software runs on a Raspberry Pi with a MTAC-LORA radio from Multi-Tech. It is tested on U.S. bands (915 Mhz).
 
+## Installation
 We need the FTDI driver (libmpsse.so). It is platform dependent, so compile it from source. Once finished libmpsse.so should be compiled and copied to /usr/lib. To install FTDI:
 
     ./ftdiinstall.sh
@@ -26,14 +27,15 @@ The lora_pkt_fwd needs to be configured. Copy the config files and update_gwid. 
     cd ~/LoraWAN-Gateway/exec/
     ./update_gwid.sh local_conf.json    
 
-Finally, we can execute the LoRa packet forwarder:
+## Usage
+    To use the gateway software, execute the LoRa packet forwarder:
 
     cd ~/LoraWAN-Gateway/exec
     ./lora_pkt_fwd
 
 
-
-These instructions were made using the following links:  
-[https://github.com/Lora-net/lora_gateway/blob/master/libloragw/install_ftdi.txt](https://github.com/Lora-net/lora_gateway/blob/master/libloragw/install_ftdi.txt)  
-[https://github.com/Lora-net/packet_forwarder/wiki/Work-with-Raspberry-Pi](https://github.com/Lora-net/packet_forwarder/wiki/Work-with-Raspberry-Pi)  
-[https://github.com/mirakonta/lora_gateway/wiki/Part-3:-Compile-LoRa-gateway-software](https://github.com/mirakonta/lora_gateway/wiki/Part-3:-Compile-LoRa-gateway-software) 
+## Sources
+    These instructions were made using the following links:  
+    [https://github.com/Lora-net/lora_gateway/blob/master/libloragw/install_ftdi.txt](https://github.com/Lora-net/lora_gateway/blob/master/libloragw/install_ftdi.txt)  
+    [https://github.com/Lora-net/packet_forwarder/wiki/Work-with-Raspberry-Pi](https://github.com/Lora-net/packet_forwarder/wiki/Work-with-Raspberry-Pi)  
+    [https://github.com/mirakonta/lora_gateway/wiki/Part-3:-Compile-LoRa-gateway-software](https://github.com/mirakonta/lora_gateway/wiki/Part-3:-Compile-LoRa-gateway-software) 
