@@ -8,6 +8,7 @@ We need the FTDI driver (libmpsse.so). It is platform dependent, so compile it f
 
 Now we download and compile the lora_gateway library and then the packet forwarder. Once finished lora_pkt_fwd should be compiled and copied in ~/LoraWAN-Gateway/exec:
 
+    cd ~
     git clone https://github.com/lab11/LoraWAN-Gateway.git
     cd ~/LoraWAN-Gateway
     git submodule init
@@ -27,15 +28,20 @@ The lora_pkt_fwd needs to be configured. Copy the config files and update_gwid. 
     cd ~/LoraWAN-Gateway/exec/
     ./update_gwid.sh local_conf.json    
 
-## Usage
-    To use the gateway software, execute the LoRa packet forwarder:
+Lastly, we need to install some dependencies for the Lora-server software. One of the dependencies is postgresSQL. Create and configure a postgres database following the instructions from https://docs.loraserver.io/loraserver/getting-started/#postgresql-server:
+    cd ~/LoraWAN-Gateway/
+    ./dependencyinstall.sh
 
-    cd ~/LoraWAN-Gateway/exec
-    ./lora_pkt_fwd
+## Usage
+To use the gateway software, execute the LoRa packet forwarder:
+
+    cd ~/LoraWAN-Gateway/
+    ./runenvironment.sh
 
 
 ## Sources
-    These instructions were made using the following links:  
+These instructions were made using the following links:  
     [https://github.com/Lora-net/lora_gateway/blob/master/libloragw/install_ftdi.txt](https://github.com/Lora-net/lora_gateway/blob/master/libloragw/install_ftdi.txt)  
     [https://github.com/Lora-net/packet_forwarder/wiki/Work-with-Raspberry-Pi](https://github.com/Lora-net/packet_forwarder/wiki/Work-with-Raspberry-Pi)  
     [https://github.com/mirakonta/lora_gateway/wiki/Part-3:-Compile-LoRa-gateway-software](https://github.com/mirakonta/lora_gateway/wiki/Part-3:-Compile-LoRa-gateway-software) 
+    [https://docs.loraserver.io/loraserver/](https://docs.loraserver.io/loraserver/)

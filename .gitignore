@@ -1,2 +1,5 @@
-exec/basic_pkt_fwd
-exec/global_conf.json
+exec/global_conf_multitech-us915.json
+	exec/local_conf.json
+	exec/lora_pkt_fwd
+	exec/lora_pkt_fwd_debug
+	exec/update_gwid.sh
