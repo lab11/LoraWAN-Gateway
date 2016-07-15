@@ -1,6 +1,6 @@
 {
     "reference": "abcd1234",
-    "confirmed": true,
+    "confirmed": false,
     "devEUI": "0000000000000000",
     "fPort": 1,
     "data": "SGk="

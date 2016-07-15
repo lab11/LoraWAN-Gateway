@@ -17,18 +17,17 @@ Now we download and compile the lora_gateway library and then the packet forward
     make clean all
     cd ~/LoraWAN-Gateway/packet_forwarder
     make clean all
-    mkdir ~/LoraWAN-Gateway/exec/
     cp ~/LoraWAN-Gateway/packet_forwarder/lora_pkt_fwd/lora_pkt_fwd ~/LoraWAN-Gateway/exec/
 
 The lora_pkt_fwd needs to be configured. Copy the config files and update_gwid. Run update_gwid on local_conf to set the gateway's ID based on MAC address. Make sure to change global_conf.json to work for your radio's frequency:
 
-    cp ~/LoraWAN-Gateway/packet_forwarder/lora_pkt_fwd/global_conf.json ~/LoraWAN-Gateway/exec/
     cp ~/LoraWAN-Gateway/packet_forwarder/lora_pkt_fwd/local_conf.json ~/LoraWAN-Gateway/exec/
     cp ~/LoraWAN-Gateway/packet_forwarder/lora_pkt_fwd/update_gwid.sh ~/LoraWAN-Gateway/exec/
     cd ~/LoraWAN-Gateway/exec/
     ./update_gwid.sh local_conf.json    
 
 Lastly, we need to install some dependencies for the Lora-server software. One of the dependencies is postgresSQL. Create and configure a postgres database following the instructions from https://docs.loraserver.io/loraserver/getting-started/#postgresql-server:
+    
     cd ~/LoraWAN-Gateway/
     ./dependencyinstall.sh
 
